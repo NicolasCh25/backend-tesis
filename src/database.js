@@ -1,15 +1,14 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', true)
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
-    console.log(`MongoDB conectado: ${conn.connection.host}`);
-  } catch (error) {
-    console.error("Error al conectar a MongoDB:", error.message);
-    process.exit(1);
-  }
-};
+const connection = async()=>{
+    try {
+        const {connection} = await mongoose.connect(process.env.MONGODB_URI_LOCAL)
+        console.log(`La base de datps esta conectada en ${connection.host} - ${connection.port}`)
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-export default connectDB;
+export default  connection
