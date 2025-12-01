@@ -36,8 +36,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Responder preflight para todas las rutas de inmediato
-app.options('*', cors(corsOptions));
+
 
 // --- Rutas ---
 app.get('/', (req, res) => res.send('Server on'));

@@ -16,8 +16,7 @@ import { verificarTokenJWT } from '../middlewares/JWT.js';
 
 const router = Router();
 
-// Defensa global a nivel de router: responder cualquier preflight OPTIONS
-router.options('*', cors());
+
 
 // Rutas (las mismas que tenías)
 router.post('/registro', registro);
